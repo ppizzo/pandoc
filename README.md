@@ -7,12 +7,12 @@ Pandoc is the *swiss-army knife* of document conversion. It is able to convert f
 This image, built on top of a slim Debian image, contains Pandoc, a LaTeX distribution, Python and a Read the Docs Sphinx Theme useful for HTML outputs.
 
 ## Prerequisites
-You must have a working Docker installation and basic knowledge on DocTools usage.
+You must have a working Docker installation and basic knowledge of DocTools usage.
 
 ## Building
-You can download pre-build Docker images from the following repository:
+You can use a pre-built Docker image from the following repository:
 
-https://hub.docker.com/r/ppizzo/doctools
+[https://hub.docker.com/r/ppizzo/doctools](https://hub.docker.com/r/ppizzo/doctools)
 
 or build it by yourself with the following command:
 
@@ -20,7 +20,9 @@ or build it by yourself with the following command:
 $ docker build -t ppizzo/doctools .
 ```
 
-## Using
+The image is quite big because it contains a complete doctools and LaTeX installation: if you want to reduce the image size you can modify the `Dockerfile` by removing the stuff you don't need.
+
+## Usage
 The image working directory is `/doc`, therefore you could mount the directory containing your input files in the `/doc` directory inside the container and run your `doctools` command with the required parameters.
 
 For example, to convert this `README.md` in `.docx` format, you could issue the following command on a GNU/Linux machine:
@@ -36,5 +38,5 @@ It's important to map your `UID:GID` inside the container, otherwise output file
 
 ## References
 * [Pandoc](https://pandoc.org/)
-* [Docker](https://www.docker.com/)
 * [Read the Docs Sphinx Theme](https://sphinx-rtd-theme.readthedocs.io/)
+* [Docker](https://www.docker.com/)

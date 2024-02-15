@@ -1,6 +1,4 @@
-FROM debian:bookworm-slim
-
-MAINTAINER Pietro Pizzo <pietro.pizzo@gmail.com>
+FROM debian:testing-slim
 
 ENV DEBIAN_FRONTEND=noninteractive
 
